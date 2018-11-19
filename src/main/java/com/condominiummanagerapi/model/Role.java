@@ -1,30 +1,22 @@
 package com.condominiummanagerapi.model;
 
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "condominium")
-public class Condominium {
+@Table(name = "role")
+public class Role {
 	
 	@Id
-	@SequenceGenerator(name = "condominium_seq", sequenceName = "condominium_seq", allocationSize = 1 )
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "condominium_seq")
+	@SequenceGenerator(name = "role_seq", sequenceName = "role_seq", allocationSize = 1 )
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "role_seq")
 	private Long id;
-	
-	@NotBlank
 	private String name;
-	
 	private String description;
-	
-	@Embedded
-	private Address address;
 	
 	public Long getId() {
 		return id;
@@ -44,13 +36,11 @@ public class Condominium {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
 	@Override
@@ -61,16 +51,11 @@ public class Condominium {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Condominium other = (Condominium) obj;
+		Role other = (Role) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
 			return false;
 		return true;
 	}

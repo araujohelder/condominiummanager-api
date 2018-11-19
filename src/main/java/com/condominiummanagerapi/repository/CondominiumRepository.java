@@ -9,5 +9,5 @@ import com.condominiummanagerapi.model.Condominium;
 public interface CondominiumRepository extends JpaRepository<Condominium, Long> {
 	
 	 public List<Condominium> findByName(String name);
-
+ 
 }
