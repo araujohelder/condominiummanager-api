@@ -40,8 +40,8 @@ public class CondominiumResource {
 	}
 	
 	@GetMapping
-	public ResponseEntity<List<Condominium>> findByName(CondominiumFilter planetFilter)  {
-		List<Condominium> Condominiums = condominiumService.search(planetFilter);
+	public ResponseEntity<List<Condominium>> findByName(CondominiumFilter condominiumFilter)  {
+		List<Condominium> Condominiums = condominiumService.search(condominiumFilter);
 		return Condominiums != null ? ResponseEntity.ok(Condominiums) : ResponseEntity.notFound().build();
 	}
 	

@@ -1,6 +1,6 @@
 package com.condominiummanagerapi.repository.condominium.filter;
 
-public class CondominiumFilter {
+public class CondominiumFilter extends Filter{
 	
 	private String name;
 
